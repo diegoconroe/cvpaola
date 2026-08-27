@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paola Chambilla Conroe - CV</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1d4ed8',   /* Azul */
+                        secondary: '#0ea5e9', /* Celeste */
+                        dark: '#1e293b',      /* Texto oscuro */
+                        light: '#f1f5f9'      /* Fondo claro Flat */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Utilidad para estilo Flat (bordes sólidos, sin sombras difusas) */
+        .flat-card {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        
+        .flat-card:hover {
+            border-color: #0ea5e9; /* Celeste al pasar el mouse */
+            transform: translateY(-2px);
+        }
+
+        .flat-btn {
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+        
+        .flat-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Animación del Menú Hamburguesa */
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background-color: white;
+            margin: 5px auto;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .hamburger.open .line-1 {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.open .line-2 {
+            opacity: 0;
+        }
+        .hamburger.open .line-3 {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Transición suave para el menú móvil */
+        #mobile-menu {
+            transition: max-height 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px; /* Altura suficiente para los enlaces */
+            opacity: 1;
+        }
+
+        /* Ajuste de scroll para compensar el header fijo */
+        section {
+            scroll-margin-top: 5rem;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-secondary selection:text-white relative">
+
+    <nav class="fixed w-full z-50 bg-primary text-white border-b-4 border-secondary shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Nombre -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio" class="font-bold text-xl tracking-wide uppercase hover:text-secondary transition-colors">
+                        Paola Chambilla
+                    </a>
+                </div>
+                
+                <!-- Menú de Escritorio -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#sobre-mi" class="hover:text-secondary transition-colors font-medium">Sobre Mí</a>
+                    <a href="#experiencia" class="hover:text-secondary transition-colors font-medium">Experiencia</a>
+                    <a href="#educacion" class="hover:text-secondary transition-colors font-medium">Educación</a>
+                    <a href="#habilidades" class="hover:text-secondary transition-colors font-medium">Habilidades</a>
+                    <a href="#voluntariado" class="hover:text-secondary transition-colors font-medium">Voluntariado</a>
+                </div>
+
+                <!-- Botón Menú Móvil (Hamburguesa) -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="hamburger focus:outline-none p-2 rounded-md hover:bg-blue-800 transition-colors" aria-label="Abrir menú">
+                        <span class="hamburger-line line-1"></span>
+                        <span class="hamburger-line line-2"></span>
+                        <span class="hamburger-line line-3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="md:hidden bg-blue-800 border-t border-blue-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#sobre-mi" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Sobre Mí</a>
+                <a href="#experiencia" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Experiencia</a>
+                <a href="#educacion" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Educación</a>
+                <a href="#habilidades" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Habilidades</a>
+                <a href="#voluntariado" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Voluntariado</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section id="sobre-mi" class="bg-white py-16 lg:py-24 border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left md:flex md:items-center md:space-x-12">
+                <div class="md:w-2/3">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2 uppercase tracking-tight">Paola Chambilla Conroe</h1>
+                    <h2 class="text-2xl font-semibold text-secondary mb-6">Ingeniería Industrial</h2>
+                    
+                    <p class="text-gray-600 leading-relaxed text-lg mb-8 text-justify">
+                        Egresada de Ingeniería Industrial con más de tres años de experiencia en logística, abastecimiento y gestión administrativa, participando en procesos de compras, evaluación y coordinación de proveedores, seguimiento de órdenes de compra, control documentario y soporte operativo. He contribuido a la optimización de procesos mediante el análisis de datos y la mejora continua, aplicando herramientas como SAP y Excel avanzado. 
+                        <br><br>
+                        Me caracterizo por mi capacidad analítica, organización, orientación a resultados y compromiso con la eficiencia operativa, buscando desarrollarme profesionalmente en las áreas de logística, compras y supply chain.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="mailto:pchambilla076@gmail.com" class="flat-btn inline-flex items-center bg-primary text-white px-5 py-2.5 rounded font-medium hover:bg-blue-800">
+                            <i class="fas fa-envelope mr-2"></i> pchambilla076@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/paola-chambilla-conroe-83b6582a7/" target="_blank" class="flat-btn inline-flex items-center bg-secondary text-white px-5 py-2.5 rounded font-medium hover:bg-sky-600">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        <span class="inline-flex items-center bg-gray-100 text-dark px-5 py-2.5 rounded font-medium border border-gray-200">
+                            <i class="fas fa-phone mr-2 text-primary"></i> 940 887 788
+                        </span>
+                        <span class="inline-flex items-center bg-gray-100 text-dark px-5 py-2.5 rounded font-medium border border-gray-200">
+                            <i class="fas fa-map-marker-alt mr-2 text-primary"></i> Arequipa
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Decoración visual estilo flat -->
+                <div class="hidden md:block md:w-1/3">
+                    <div class="w-full aspect-square bg-secondary rounded-full relative overflow-hidden flex items-center justify-center shadow-lg border-8 border-white">
+                        <i class="fas fa-user-tie text-white text-9xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="py-16 bg-light">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-10 flex items-center">
+                    <i class="fas fa-briefcase mr-3 text-secondary"></i> Experiencia Laboral
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- Experiencia 1 -->
+                    <div class="flat-card p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">ITAL IMPORT DE MAQUINARIAS S.A.C.</h3>
+                                <h4 class="text-lg font-semibold text-secondary">Administrativo Comercial</h4>
+                            </div>
+                            <span class="inline-block bg-blue-100 text-primary px-3 py-1 rounded text-sm font-semibold mt-2 md:mt-0">
+                                Abril 2025 - Actualidad
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                            <li>Gestión y seguimiento de pedidos de compra B2B, coordinando con clientes, proveedores y almacén.</li>
+                            <li>Elaboración de órdenes de compra, proformas comerciales, facturas y guías de remisión.</li>
+                            <li>Supervisión y control de inventarios mediante sistema ERP, seguimiento de stock y reposición.</li>
+                            <li>Embalaje, programación y coordinación de envíos con empresas de transporte.</li>
+                            <li>Coordinación de procesos de postventa, garantías y atención de incidencias logísticas.</li>
+                            <li>Elaboración de reportes operativos en Excel para seguimiento de pedidos e inventarios.</li>
+                            <li>Viajes de coordinación y seguimiento de operaciones logísticas.</li>
+                        </ul>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-secondary">
+                            <strong class="text-primary block mb-1">Logros destacados:</strong>
+                            <p class="text-sm text-gray-700">Reduje los tiempos operativos en procesos comerciales mediante la automatización con macros en Excel, mejorando la eficiencia. Amplié la cartera de proveedores mediante viajes de coordinación comercial.</p>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia 2 -->
+                    <div class="flat-card p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-dark">GRUPO RUWANA S.A.C.</h3>
+                                <h4 class="text-lg font-semibold text-secondary">Asistente Logístico</h4>
+                            </div>
+                            <span class="inline-block bg-blue-100 text-primary px-3 py-1 rounded text-sm font-semibold mt-2 md:mt-0">
+                                Marzo 2022 - Marzo 2025
+                            </span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                            <li>Gestión de compras y abastecimiento de materiales y servicios para operaciones del sector minero.</li>
+                            <li>Coordinación y evaluación de proveedores (Enaex, Orica, Exsa).</li>
+                            <li>Solicitud y análisis de cotizaciones mediante cuadros comparativos de precio, plazo y condiciones comerciales.</li>
+                            <li>Seguimiento de órdenes de compra y control documentario logístico.</li>
+                            <li>Coordinación con almacén, mantenimiento y operaciones para el despacho y abastecimiento.</li>
+                            <li>Elaboración de reportes logísticos y control de información mediante ERP y Excel.</li>
+                        </ul>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-secondary">
+                            <strong class="text-primary block mb-1">Logros destacados:</strong>
+                            <p class="text-sm text-gray-700">Amplié la cartera de proveedores mediante la búsqueda y evaluación de nuevas opciones. Implementé herramientas en la nube para el control actualizado de información. Optimicé procesos mediante la automatización con macros en Excel, reduciendo tiempos y errores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="educacion" class="py-16 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <!-- Educación Superior -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-8 flex items-center">
+                            <i class="fas fa-graduation-cap mr-3 text-secondary"></i> Educación
+                        </h2>
+                        <div class="flat-card p-6 border-l-4 border-l-primary">
+                            <h3 class="text-xl font-bold text-dark">Egresada de Ingeniería Industrial</h3>
+                            <h4 class="text-secondary font-medium mt-1">Universidad Católica de Santa María</h4>
+                            <p class="text-gray-500 mt-2 text-sm"><i class="far fa-calendar-alt mr-1"></i> Marzo 2020 - Diciembre 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Formación Complementaria -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-8 flex items-center">
+                            <i class="fas fa-certificate mr-3 text-secondary"></i> Formación
+                        </h2>
+                        <div class="space-y-4">
+                            <div class="flat-card p-4">
+                                <h4 class="font-bold text-dark text-sm md:text-base">Indicadores para la Gestión y Control de Proyectos (KPI's)</h4>
+                                <p class="text-secondary text-sm">TECSUP | Enero - Febrero 2026</p>
+                            </div>
+                            <div class="flat-card p-4">
+                                <h4 class="font-bold text-dark text-sm md:text-base">Fundamentos de SSOMA</h4>
+                                <p class="text-secondary text-sm">Universidad Nacional de Ingeniería | Ene - Feb 2025</p>
+                            </div>
+                            <div class="flat-card p-4">
+                                <h4 class="font-bold text-dark text-sm md:text-base">Gestión Eficiente de Almacenes / Costos y Presupuestos</h4>
+                                <p class="text-secondary text-sm">TECSUP | Cursando</p>
+                            </div>
+                            <div class="flat-card p-4">
+                                <h4 class="font-bold text-dark text-sm md:text-base">Especialización en Seguridad y Salud Ocupacional</h4>
+                                <p class="text-secondary text-sm">Multimillon S.A.C.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="py-16 bg-primary text-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-white mb-10 text-center uppercase tracking-wider">
+                    Habilidades y Conocimientos
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Conocimientos Técnicos -->
+                    <div class="bg-blue-800 p-6 rounded-lg border border-blue-600">
+                        <h3 class="text-xl font-bold mb-4 text-secondary border-b border-blue-600 pb-2"><i class="fas fa-brain mr-2"></i> Conocimientos</h3>
+                        <ul class="space-y-2 text-sm text-blue-100">
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Cadena de suministro</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Logística y abastecimiento</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Gestión de compras</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Evaluación de proveedores</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Control de inventarios</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Análisis de datos</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i> Mejora de procesos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Softwares -->
+                    <div class="bg-blue-800 p-6 rounded-lg border border-blue-600">
+                        <h3 class="text-xl font-bold mb-4 text-secondary border-b border-blue-600 pb-2"><i class="fas fa-laptop-code mr-2"></i> Softwares</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex justify-between items-center"><span class="text-blue-100">Excel (Macros)</span> <span class="bg-secondary text-white text-xs px-2 py-1 rounded">Avanzado</span></li>
+                            <li class="flex justify-between items-center"><span class="text-blue-100">Word / PPT / Canva</span> <span class="bg-secondary text-white text-xs px-2 py-1 rounded">Avanzado</span></li>
+                            <li class="flex justify-between items-center"><span class="text-blue-100">SAP MMWM</span> <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded border border-blue-400">Intermedio</span></li>
+                            <li class="flex justify-between items-center"><span class="text-blue-100">Power BI</span> <span class="bg-blue-900 text-white text-xs px-2 py-1 rounded border border-blue-700">Básico</span></li>
+                            <li class="flex justify-between items-center"><span class="text-blue-100">Microsoft Project</span> <span class="bg-blue-900 text-white text-xs px-2 py-1 rounded border border-blue-700">Básico</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Idiomas -->
+                    <div class="bg-blue-800 p-6 rounded-lg border border-blue-600">
+                        <h3 class="text-xl font-bold mb-4 text-secondary border-b border-blue-600 pb-2"><i class="fas fa-language mr-2"></i> Idiomas</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-blue-100">Inglés</span>
+                                    <span class="text-sm font-medium text-secondary">Intermedio</span>
+                                </div>
+                                <div class="w-full bg-blue-900 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-blue-100">Italiano</span>
+                                    <span class="text-sm font-medium text-blue-300">Básico</span>
+                                </div>
+                                <div class="w-full bg-blue-900 rounded-full h-2">
+                                    <div class="bg-blue-400 h-2 rounded-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Habilidades Blandas -->
+                    <div class="bg-blue-800 p-6 rounded-lg border border-blue-600">
+                        <h3 class="text-xl font-bold mb-4 text-secondary border-b border-blue-600 pb-2"><i class="fas fa-users mr-2"></i> Habilidades Blandas</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-700 text-blue-100 px-3 py-1 rounded-full text-sm border border-blue-500">Trabajo en equipo</span>
+                            <span class="bg-blue-700 text-blue-100 px-3 py-1 rounded-full text-sm border border-blue-500">Productividad</span>
+                            <span class="bg-blue-700 text-blue-100 px-3 py-1 rounded-full text-sm border border-blue-500">Organización</span>
+                            <span class="bg-blue-700 text-blue-100 px-3 py-1 rounded-full text-sm border border-blue-500">Orientación a resultados</span>
+                            <span class="bg-blue-700 text-blue-100 px-3 py-1 rounded-full text-sm border border-blue-500">Comunicación</span>
+                            <span class="bg-blue-700 text-blue-100 px-3 py-1 rounded-full text-sm border border-blue-500">Adaptabilidad</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="voluntariado" class="py-16 bg-light">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-primary mb-10 flex items-center">
+                    <i class="fas fa-hands-helping mr-3 text-secondary"></i> Actividades Extracurriculares y Voluntariado
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Voluntariado 1 -->
+                    <div class="flat-card p-6 h-full flex flex-col">
+                        <h3 class="text-lg font-bold text-dark mb-1">Municipalidad Prov. de Arequipa</h3>
+                        <h4 class="text-secondary text-sm font-medium mb-3">Administrativo | Sep - Dic 2025</h4>
+                        <p class="text-gray-600 text-sm flex-grow mb-4">Apoyo en revisión de expedientes, gestión logística y distribución de recursos para actividades operativas de la Subgerencia de Promoción del Desarrollo Económico.</p>
+                        <div class="text-xs bg-gray-100 p-3 rounded text-gray-700 border border-gray-200">
+                            <strong>Logro:</strong> Destacada como voluntaria principal, mejorando la organización en distribución de recursos.
+                        </div>
+                    </div>
+
+                    <!-- Voluntariado 2 -->
+                    <div class="flat-card p-6 h-full flex flex-col">
+                        <h3 class="text-lg font-bold text-dark mb-1">Instituto de Ingeniería de Minas</h3>
+                        <h4 class="text-secondary text-sm font-medium mb-3">PERUMIN 37 | Septiembre 2025</h4>
+                        <p class="text-gray-600 text-sm flex-grow mb-4">Apoyo logístico en foros, orientación de delegaciones, soporte operativo en control de accesos y asistencia a ponentes garantizando el cumplimiento del programa.</p>
+                        <div class="text-xs bg-gray-100 p-3 rounded text-gray-700 border border-gray-200">
+                            <strong>Logro:</strong> Fortalecí habilidades de coordinación y comunicación en entornos de alta exigencia.
+                        </div>
+                    </div>
+
+                    <!-- Voluntariado 3 -->
+                    <div class="flat-card p-6 h-full flex flex-col">
+                        <h3 class="text-lg font-bold text-dark mb-1">WIM Perú (Women in Mining)</h3>
+                        <h4 class="text-secondary text-sm font-medium mb-3">Asociada Estudiantil | Nov 2025 - Actual</h4>
+                        <p class="text-gray-600 text-sm flex-grow mb-4">Participación y voluntariado en eventos del sector minero promoviendo la equidad de género. Exposición institucional en espacios como INDUMIN.</p>
+                        <div class="text-xs bg-gray-100 p-3 rounded text-gray-700 border border-gray-200">
+                            <strong>Logro:</strong> Promoción activa del propósito y alcance de la participación femenina en el sector.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-8 border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-xl font-bold uppercase tracking-widest mb-2">Paola Chambilla</h3>
+            <p class="text-gray-400 text-sm mb-4">Ingeniera Industrial</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/paola-chambilla-conroe-83b6582a7/" target="_blank" class="text-gray-400 hover:text-secondary transition-colors text-xl" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:pchambilla076@gmail.com" class="text-gray-400 hover:text-secondary transition-colors text-xl" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-xs text-gray-500 mt-6">&copy; 2026 Paola Chambilla. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            
+            // Función para alternar el menú
+            const toggleMenu = () => {
+                btn.classList.toggle('open');
+                menu.classList.toggle('open');
+                
+                // Accesibilidad
+                const isOpen = btn.classList.contains('open');
+                btn.setAttribute('aria-expanded', isOpen);
+            };
+
+            // Event listener para el botón de hamburguesa
+            btn.addEventListener('click', toggleMenu);
+
+            // Cerrar el menú al hacer clic en un enlace (movimiento fluido)
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menu.classList.contains('open')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Cerrar menú si se hace scroll
+            window.addEventListener('scroll', () => {
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }, { passive: true });
+        });
+    </script>
+</body>
+</html>
