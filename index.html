@@ -119,6 +119,7 @@
                     <a href="#educacion" class="hover:text-secondary transition-colors font-medium">Educación</a>
                     <a href="#habilidades" class="hover:text-secondary transition-colors font-medium">Habilidades</a>
                     <a href="#voluntariado" class="hover:text-secondary transition-colors font-medium">Voluntariado</a>
+                    <a href="#contacto" class="hover:text-secondary transition-colors font-medium">Contacto</a>
                 </div>
 
                 <!-- Botón Menú Móvil (Hamburguesa) -->
@@ -140,6 +141,7 @@
                 <a href="#educacion" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Educación</a>
                 <a href="#habilidades" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Habilidades</a>
                 <a href="#voluntariado" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Voluntariado</a>
+                <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition-colors">Contacto</a>
             </div>
         </div>
     </nav>
@@ -176,7 +178,7 @@
                 <!-- Decoración visual estilo flat -->
                 <div class="hidden md:block md:w-1/3">
                     <div class="w-full aspect-square bg-secondary rounded-full relative overflow-hidden flex items-center justify-center shadow-lg border-8 border-white">
-                        <i class="fas fa-user-tie text-white text-9xl"></i>
+                        <img src="https://github.com/diegoconroe/cvpaola/raw/main/images.jpg" alt="Foto de Paola Chambilla" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -402,6 +404,84 @@
                 </div>
             </div>
         </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="py-16 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+                    
+                    <!-- Área 1: Información de Contacto -->
+                    <div class="lg:w-1/2 p-10 lg:p-12 flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold text-primary mb-4 flex items-center">
+                            <i class="fas fa-envelope mr-3 text-secondary"></i> Contáctame
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                            Déjame un mensaje para ponernos a trabajar juntos.
+                        </p>
+
+                        <!-- Botón de WhatsApp -->
+                        <div class="mt-auto">
+                            <a href="https://wa.me/51940887788" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-4 group">
+                                <div class="bg-blue-50 p-4 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                                    <!-- Icono WhatsApp SVG -->
+                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                                    </svg>
+                                </div>
+                                <span class="font-semibold text-lg text-gray-700 group-hover:text-primary transition-colors">
+                                    Escríbeme por WhatsApp
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Área 2: Formulario de Contacto -->
+                    <div class="lg:w-1/2 bg-secondary p-10 lg:p-12">
+                        <form id="contactForm" class="space-y-6">
+                            <!-- Campo Nombre -->
+                            <div>
+                                <label for="nombre" class="block text-sm font-semibold text-white mb-2">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required
+                                    class="w-full px-5 py-3 rounded-xl border border-transparent focus:border-white focus:ring-2 focus:ring-white focus:outline-none bg-white/95 text-gray-800 placeholder-gray-400 shadow-sm transition-all">
+                            </div>
+
+                            <!-- Campo Teléfono -->
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-white mb-2">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required
+                                    class="w-full px-5 py-3 rounded-xl border border-transparent focus:border-white focus:ring-2 focus:ring-white focus:outline-none bg-white/95 text-gray-800 placeholder-gray-400 shadow-sm transition-all">
+                            </div>
+
+                            <!-- Campo Correo Electrónico -->
+                            <div>
+                                <label for="correoelectronico" class="block text-sm font-semibold text-white mb-2">Correo Electrónico</label>
+                                <input type="email" id="correoelectronico" name="correoelectronico" required
+                                    class="w-full px-5 py-3 rounded-xl border border-transparent focus:border-white focus:ring-2 focus:ring-white focus:outline-none bg-white/95 text-gray-800 placeholder-gray-400 shadow-sm transition-all">
+                            </div>
+
+                            <!-- Campo Mensaje -->
+                            <div>
+                                <label for="mensaje" class="block text-sm font-semibold text-white mb-2">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" required
+                                    class="w-full px-5 py-3 rounded-xl border border-transparent focus:border-white focus:ring-2 focus:ring-white focus:outline-none bg-white/95 text-gray-800 placeholder-gray-400 shadow-sm transition-all resize-none"></textarea>
+                            </div>
+
+                            <!-- Botón Enviar -->
+                            <button type="submit" id="btnSubmit"
+                                class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-blue-800 text-white border-2 border-transparent hover:border-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none">
+                                <svg id="btnSpinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span id="btnText">Enviar Mensaje</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-dark text-white py-8 border-t-4 border-secondary">
@@ -419,6 +499,19 @@
             <p class="text-xs text-gray-500 mt-6">&copy; 2026 Paola Chambilla. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Modal / Mensaje de Éxito (Reemplazo del alert) -->
+    <div id="toastSuccess" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 bg-white border border-gray-100 p-5 rounded-2xl shadow-2xl flex items-center gap-4 transform transition-all duration-500 translate-y-24 opacity-0 pointer-events-none z-50">
+        <div class="bg-green-100 text-green-600 p-2 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        <div>
+            <h4 class="text-gray-800 font-bold">¡Mensaje enviado!</h4>
+            <p class="text-gray-500 text-sm">Pronto nos pondremos en contacto.</p>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -454,6 +547,62 @@
                     toggleMenu();
                 }
             }, { passive: true });
+
+            // --- LÓGICA DEL FORMULARIO DE CONTACTO ---
+            const contactForm = document.getElementById('contactForm');
+            const btnSubmit = document.getElementById('btnSubmit');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const toastSuccess = document.getElementById('toastSuccess');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    // Cambiar texto y deshabilitar botón
+                    btnSubmit.disabled = true;
+                    btnSubmit.classList.add('opacity-80', 'cursor-not-allowed');
+                    btnText.textContent = "Enviando...";
+                    btnSpinner.classList.remove('hidden');
+
+                    // Crear FormData
+                    const formData = new FormData(contactForm);
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbzhPiSab6UF79RkCnxwLAOFgB_AJ5OQMOhTuT_SUOidnq2JA7YkIlsYQFPoAWmqWpB7Ow/exec";
+
+                    try {
+                        // Usar fetch para enviar datos
+                        const response = await fetch(scriptURL, {
+                            method: 'POST',
+                            body: formData,
+                            mode: 'no-cors'
+                        });
+
+                        // Respuesta exitosa
+                        mostrarMensajeExito();
+                        contactForm.reset();
+
+                    } catch (error) {
+                        console.error("Error al enviar el formulario: ", error);
+                        alert("Ocurrió un error de conexión. Por favor, intenta de nuevo.");
+                    } finally {
+                        // Restaurar el botón a su estado normal
+                        btnSubmit.disabled = false;
+                        btnSubmit.classList.remove('opacity-80', 'cursor-not-allowed');
+                        btnText.textContent = "Enviar Mensaje";
+                        btnSpinner.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Función para animar y mostrar el mensaje de éxito "Amigable"
+            function mostrarMensajeExito() {
+                toastSuccess.classList.remove('translate-y-24', 'opacity-0');
+                
+                // Ocultar automáticamente después de 4 segundos
+                setTimeout(() => {
+                    toastSuccess.classList.add('translate-y-24', 'opacity-0');
+                }, 4000);
+            }
         });
     </script>
 </body>
